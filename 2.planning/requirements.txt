@@ -1,0 +1,14 @@
+1. create an account
+2. login
+3. create / update profile
+4. feed page
+5. send connection request
+6. see our matches
+7. see the request we have sent / recieved
+
+
+for now this feature we can implement
+
+Tech Planning
+2 microservices - frontend and backend
+Tech stack - MERN

@@ -1,0 +1,41 @@
+Monolith Architecture
+
+Monolith architecture is a traditional way of building software where all components of the application are combined into a single, unified codebase and deployed as one unit.
+
+
+Microservice Architecture
+
+Microservice architecture is a modern approach to building software where an application is divided into multiple small, independent services. Each service is responsible for a specific feature or functionality and can be developed, deployed, and scaled independently. These services communicate with each other through APIs (usually HTTP/REST or messaging queues).
+
+1.	Development Speed
+	•	Microservices: Faster development due to independent teams working on different services simultaneously.
+	•	Monolith: Slower, as changes in one part can affect the whole application.
+2.	Scalability
+	•	Microservices: Easier to scale — you can scale only the services that need more resources.
+	•	Monolith: Scaling requires deploying the entire application, even if only one part needs more resources.
+3.	Deployment
+	•	Monolith: Entire project is deployed as a single unit.
+	•	Microservices: Each component (e.g., frontend, backend, payment service) is deployed separately.
+4.	Change Management
+	•	Monolith: A small change (e.g., one line in the frontend) requires redeploying the entire project.
+	•	Microservices: Only the affected service (e.g., frontend) needs redeployment.
+5.	Technology Stack
+	•	Monolith: Usually limited to one main stack for the whole application.
+	•	Microservices: Can use different stacks for different services (e.g., Python for ML service, React for frontend, Node.js for backend).
+6.	Infrastructure Cost
+	•	Monolith: Generally cheaper to host initially since it’s one deployment.
+	•	Microservices: Can be costlier due to multiple services needing separate infrastructure, but more efficient in scaling.
+7.	Maintenance & Updates
+	•	Microservices: Easier to maintain and revamp specific parts without affecting the whole system.
+	•	Monolith: Harder to update without risking breaking other parts of the application.
+
+⸻
+
+
+
+in conclusion monolith can be used for small application and if you need to build a larger project 
+then we use microservices
+or initially we can start with few microservices 2 or 3 and later as grows we can divide into more no of microservices to handle efficiently
+
+in devtinder we will building 2 microservices - frontend and backend
+the communicate using api calls

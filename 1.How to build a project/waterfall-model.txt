@@ -1,0 +1,8 @@
+Requirements - project manager / designers will give the mock design to PM
+    └─ Design - choosing architecture / Tech stack etc.. by tech team/senior engineers/leads
+          └─ Development
+                └─ Testing
+                     └─ Deployment 
+                           └─ Maintainance
+
+This Model is known as Waterfall model

@@ -1,0 +1,32 @@
+if planning is good writting code is easy
+
+LLD - low level design
+    DB design 
+        think about collections, documents and list it
+        we will have the following collections
+        user collection - to store user data
+        connectionRequest - store connection data
+            here we will store who sends the request to whom and the status of request
+            fromUserId
+            toUserid
+            status - we can have pending, accepted, rejected, ignored,
+    API documentation - which all APIs we will use
+
+
+API Design
+http methods - 
+    get - to get data
+    post - to send data
+    put - to update data - Replaces the entire resource with the new data you send.
+    patch - to update data - Updates only specific fields in the resource.
+    delete - to delete data
+/signup - post
+/login - post
+/profile - post (creating)
+/profile - get (reading)
+/profile - patch (updating)
+/profile - delete (deleting). these are known as CRUD operations - create, read, update, delete
+/sendRequest - post 
+/acceptRequest - post
+/request - get
+/connection - get
