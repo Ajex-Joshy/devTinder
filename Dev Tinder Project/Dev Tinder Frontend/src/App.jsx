@@ -1,9 +1,22 @@
-function App() {
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Body from "./Body";
+import Login from "./Login";
+import Profile from "./Profile";
+
+const App = () => {
   return (
-    <>
-      <h1 className="text-2xl text-red-500">hello world</h1>
-    </>
+    <div>
+      <BrowserRouter basename="/">
+        <Routes>
+          <Route path="/" element={<Body />}>
+            <Route path="/login" element={<Login />} />
+            <Route path="/profie" element={<Profile />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </div>
   );
-}
+};
 
 export default App;
