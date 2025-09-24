@@ -49,3 +49,6 @@ dont worry
 just run a command npm install
 this will install all the dependencies in package.json and the exact version from package-lock.json
 so as long as we have package.json and package-lock.json we does not need to worry about dependencies
+
+also first connect to database and then start listen to port or else if database didnot connect successfully
+and and user make api call it wont work

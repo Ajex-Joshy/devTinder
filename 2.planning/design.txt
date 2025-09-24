@@ -30,3 +30,5 @@ http methods -
 /acceptRequest - post
 /request - get
 /connection - get
+
+find the all the corner cases and solve it if we doesnt solve it, then it might be a threat for us
