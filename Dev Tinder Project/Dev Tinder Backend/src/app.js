@@ -1,18 +1,35 @@
-const express = require('express');
-const { connectDB } = require('./config/database')
-const User = require('./models/user')
+// here we will implement schema methods, express routers, new APIs
+const express = require("express");
+const mongoose = require("mongoose");
+const cookieParser = require("cookie-parser");
+const userRouter = require("./routes/auth");
+const profileRouter = require("./routes/profile");
+const connectionRouter = require("./routes/connectionRequest");
+const userConnection = require("./routes/user");
+
 const app = express();
-const authRouter = require('./routes/auth')
-const profileRouter = require('./routes/profile');
 
-connectDB()
-.then(() => {
-    console.log('Database connection establised successfully');
-    app.listen(3000, () => console.log('server successfully listening on port: 3000'));
-})
-.catch(() => console.log('failed to connect DB'))
+const connectDb = async () => {
+  await mongoose.connect(
+    "mongodb+srv://Ajex-Joshy:FonUd33RyCVddHSi@namaste-nodejs.qn17tbf.mongodb.net/11jersey"
+  );
+};
+const startServer = async () => {
+  try {
+    await connectDb();
+    console.log("Database connection established successfully");
+    app.listen(3000, () =>
+      console.log("server successfully listening on port: 3000")
+    );
+  } catch (err) {
+    console.log("error connecting to DB");
+  }
+};
+startServer();
 
-app.use('/',authRouter);
-app.use('/',profileRouter);
-
-
+app.use(express.json());
+app.use(cookieParser());
+app.use("/", userRouter);
+app.use("/", profileRouter);
+app.use(connectionRouter);
+app.use(userConnection);
