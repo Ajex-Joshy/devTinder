@@ -12,7 +12,7 @@ const app = express();
 
 const connectDb = async () => {
   await mongoose.connect(
-    "mongodb+srv://Ajex-Joshy:FonUd33RyCVddHSi@namaste-nodejs.qn17tbf.mongodb.net/11jersey"
+    "mongodb+srv://Ajex-Joshy:FonUd33RyCVddHSi@namaste-nodejs.qn17tbf.mongodb.net/devTinder"
   );
 };
 const startServer = async () => {

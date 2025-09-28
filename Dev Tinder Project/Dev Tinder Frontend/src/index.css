@@ -2,3 +2,7 @@
 @plugin "daisyui" {
   themes: light --default, dark --prefersdark, black;
 }
+
+.bg-devtinder {
+  @apply bg-gradient-to-br from-gray-900 via-gray-800 to-black;
+}

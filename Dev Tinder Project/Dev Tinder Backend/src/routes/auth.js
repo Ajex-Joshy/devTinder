@@ -20,8 +20,8 @@ userRouter.post("/signup", async (req, res) => {
       emailId,
       gender,
       password,
-      skills,
       photoUrl,
+      about,
     } = req.body;
     const passwordHash = await bcrypt.hash(password, 10);
     const user = new User({
@@ -32,19 +32,22 @@ userRouter.post("/signup", async (req, res) => {
       emailId,
       gender,
       password: passwordHash,
-      skills,
+      about,
       photoUrl,
     });
     await user.save();
-    res.send("user data saved successfully");
+    const token = user.getJWT();
+    res.cookie("token", token);
+    const userData = user.toObject();
+    delete userData.password;
+    res.json({ user: userData });
   } catch (err) {
-    res.status(400).send("ERROR: " + err.message);
+    res.status(400).send(err.message);
   }
 });
 
 userRouter.post("/login", async (req, res) => {
   const { emailId, password } = req.body;
-  console.log(emailId, password);
 
   try {
     if (!validator.isEmail(emailId)) {
@@ -64,7 +67,7 @@ userRouter.post("/login", async (req, res) => {
     delete userData.password;
     res.json({ user: userData });
   } catch (err) {
-    res.status(400).json({ msg: err.message });
+    res.status(400).send(err.message);
   }
 });
 
